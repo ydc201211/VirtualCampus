@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.vc.ui"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="16"
+        android:targetSdkVersion="21" />
+
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.BAIDU_LOCATION_SERVICE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCES_MOCK_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_GPS" />
+    
+    <!-- SDK1.5需要android.permission.GET_TASKS权限判断本程序是否为当前运行的应用? -->
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <!-- 来电消音 -->
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
+   
+    
+	<permission android:protectionLevel="normal" android:name="cn.bmob.permission.push"></permission>
+    <uses-permission android:name="cn.bmob.permission.push"/><!-- 添加自定义的权限-->
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.INTERNET" /> 
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
+
+    <application
+        android:name=".App"
+        android:allowBackup="true"
+        android:hardwareAccelerated="true"
+        android:icon="@drawable/launcher"
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.NoTitleBar" >
+        
+        
+        <meta-data
+            android:name="BaiduMobAd_STAT_ID"
+            android:value="48ae76de3f" />
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="GhugcRUVGf9xqPm41ph666XEgpj0WdyU" />
+        
+        <!-- 融云即时通讯 -->
+        <meta-data
+		    android:name="RONG_CLOUD_APP_KEY"
+		    android:value="ik1qhw091157p"/>
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" >
+            <intent-filter>
+                <action android:name="com.baidu.location.service_v2.2" >
+                </action>
+            </intent-filter>
+        </service>
+
+       
+		
+        <activity
+            android:name=".Activity_Welcome"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.NoTitleBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Main" />
+        <activity android:name=".Fragment_Find" />
+        <activity android:name=".Fragment_Person" />
+        <activity android:name=".Activity_ActivityList" />
+        <activity android:name=".Activity_Serach_Detail" />
+        <activity android:name=".InfoDetail_Activity" />
+        <activity android:name="com.guide.BNDemoGuideActivity" />
+        <activity
+            android:name=".Activity_MapSerach"
+            android:theme="@android:style/Theme.NoTitleBar" />
+        <activity android:name=".Lines_Choose_Activity" />
+        <activity android:name=".ForgetPw_Activity" />
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".Quick_Login_Activity" />
+        <activity android:name=".RegisterActivity" />
+        <activity android:name=".ResurePassword_Activity" />
+        <activity android:name=".ResurePw_Activity" />
+        <activity android:name=".Activity_ChangePsw" />
+
+        <!-- 二维码 -->
+        <activity android:name="com.vc.code.CaptureActivity" />
+        
+        <activity android:name=".Activity_ChangePsw_psw" />
+        <activity android:name=".Action_Detail_Activity" />
+        <activity android:name=".InfoDetaile_Activity_" />
+        <activity android:name=".Activity_Setting" />
+        <activity
+            android:name=".Activity_Person_Detail"
+            android:label="@string/title_activity_activity__person__detail" />
+        <activity
+            android:name=".Activity_MyActivity"
+            android:label="@string/title_activity_activity__my" />
+        <activity
+            android:name=".Activity_Post"
+            android:label="@string/title_activity_activity__post" />
+        <activity
+            android:name=".Activity_NewStrategy"
+            android:label="@string/title_activity_activity__new_strategy" />
+        <activity
+            android:name=".Activity_WebView"
+            android:label="@string/title_activity_activity__web_view" />
+        <activity
+            android:name=".Activity_CollegeIntro"
+            android:label="@string/title_activity_activity__college_intro" >
+        </activity>
+        <activity
+            android:name=".Activity_Reg_Process"
+            android:label="@string/title_activity_activity__reg__process" >
+        </activity>
+        <activity
+            android:name=".Activity_PointSearch"
+            android:label="@string/title_activity_activity__point_search" >
+        </activity>
+        <activity
+            android:name=".Activity_BigPicture"
+            android:label="@string/title_activity_activity__big_picture" >
+        </activity>
+        <activity
+            android:name=".Activity_AddFriend"
+            android:label="@string/title_activity_activity__add_friend" >
+        </activity>
+    </application>
+
+</manifest>

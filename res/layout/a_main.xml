@@ -1,0 +1,51 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+	<LinearLayout
+        android:id="@+id/line_fragment"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="0dp"
+        android:layout_gravity="bottom"
+        android:orientation="vertical"
+        android:background="@color/gray_bg">
+    </LinearLayout>
+    <View  
+    android:layout_width="fill_parent"  
+    android:layout_height="1px"  
+    android:background="@color/divider"/>   
+           
+   <RadioGroup
+        android:id="@+id/rg_tab"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="bottom"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/rb_map"
+            style="@style/RadioButtonBottomTab"
+            android:checked="true"
+            android:drawableTop="@drawable/icon_map"
+            android:text="地图" />
+
+        <RadioButton
+            android:id="@+id/rb_find"
+            style="@style/RadioButtonBottomTab"
+            android:drawableTop="@drawable/icon_find"
+            android:text="发现" />
+
+         <RadioButton
+            android:id="@+id/rb_mine"
+            style="@style/RadioButtonBottomTab"
+            android:drawableTop="@drawable/icon_people"
+            android:text="我的" />
+
+        
+    </RadioGroup>
+
+</LinearLayout>

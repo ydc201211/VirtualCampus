@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>   
+    <color name="gray">#EAEAEA</color>
+    <color name="gray_bg">#F2F2F2</color>
+    <color name="jacinth">#F39700</color>
+    <color name="green">#8EC31E</color>
+    <color name="title_no_back">#2F73E9</color>
+    <color name="black">#080808 </color>
+    <color name="black_1">#706F6F</color>
+    <color name="black_2">#9C9C9C</color>
+    <color name="lightgray">#D2D6D7 </color>
+    <color name="fontcolor">#666666 </color>
+    <color name="money">#f39700 </color>
+    
+     <color name="background">#48D1CC</color><!-- #D9DCE2  -->
+    <color name="pulldown_text">#FFBFBFBF</color>
+    <color name="blue">#2F73E9</color>
+    <color name="titlebar">#2F73E9</color>
+    <color name="white">#FFFFFF</color>
+    <color name="divider">#D5D5D5</color>
+    <color name="tabbar_text_blue">#2f73e9</color>
+    <color name="tabbar_text_gray">#d1d1d1</color>
+    <color name="item_text_gray">#bfbebe</color>
+    
+    <color name="transparent">#00000000</color>
+    
+    <color name="mid_gray">#B0AFAF</color>
+    
+    <color name="gray_1">#4D4747</color>
+</resources>

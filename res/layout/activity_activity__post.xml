@@ -1,0 +1,155 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/gray_bg"
+    tools:context="com.vc.ui.Activity_Post" >
+
+    <include layout="@layout/include_titlebar"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical"
+	    android:layout_marginTop="6dp">
+	    <LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent"
+	        android:orientation="vertical"
+	        android:background="@color/white"
+	        android:scrollbars="vertical">
+	        <LinearLayout 
+	           	android:layout_width="match_parent"
+	           	android:layout_height="wrap_content"
+	           	android:orientation="horizontal"
+	           	android:layout_marginTop="10dp">
+	           	
+	        	<TextView
+	        	    android:id="@+id/post_theme_tv"  
+	        	    android:layout_width="0dp"
+	        	    android:layout_weight="1"
+	        	    android:layout_height="wrap_content"
+	        	    android:textSize="20sp"
+	        	    android:layout_margin="10dp"
+	        	    android:text="活动主题："/>
+	        	<EditText
+	        	    android:id="@+id/post_theme_et"
+	        	    android:layout_width="0dp"
+	        	    android:layout_weight="1.5"
+	        	    android:layout_height="wrap_content"
+	        	   	android:layout_gravity="center_vertical"
+	        	    android:background="@null"/>
+	        </LinearLayout>
+	        
+	        <!-- 主持者 -->
+	        <LinearLayout 
+	           	android:layout_width="match_parent"
+	           	android:layout_height="wrap_content"
+	           	android:layout_marginTop="10dp">
+	        	<TextView
+	        	    android:id="@+id/post_host_tv"  
+	        	    android:layout_width="0dp"
+	        	    android:layout_weight="1"
+	        	    android:layout_height="wrap_content"
+	        	    android:textSize="20sp"
+	        	    android:layout_margin="10dp"
+	        	    android:text="活动主持者："/>
+	        	<EditText
+	        	    android:id="@+id/post_host_et"
+	        	    android:layout_width="0dp"
+	        	    android:layout_weight="1.5"
+	        	    android:layout_height="wrap_content"
+	        	    android:layout_gravity="center_vertical"
+	        	    android:background="@null"/>
+	        </LinearLayout>
+	        <!-- 活动时间-->
+	        <LinearLayout 
+	           	android:layout_width="match_parent"
+	           	android:layout_height="wrap_content"
+	           	android:layout_marginTop="10dp">
+	        	<TextView
+	        	    android:id="@+id/post_time_tv"  
+	        	    android:layout_width="0dp"
+	        	    android:layout_weight="1"
+	        	    android:layout_height="wrap_content"
+	        	    android:textSize="20sp"
+	        	    android:layout_margin="10dp"
+	        	    android:text="活动时间："/>
+	        	<EditText
+	        	    android:id="@+id/post_time_et"
+	        	    android:layout_width="0dp"
+	        	    android:layout_weight="1.5"
+	        	    android:layout_height="wrap_content"
+	        	    android:layout_gravity="center_vertical"
+	        	    android:background="@null"/>
+	        </LinearLayout>
+	        
+	         <!-- 活动地点-->
+	        <LinearLayout 
+	           	android:layout_width="match_parent"
+	           	android:layout_height="wrap_content"
+	           	android:layout_marginTop="10dp">
+	        	<TextView
+	        	    android:id="@+id/post_site_tv"  
+	        	    android:layout_width="0dp"
+	        	    android:layout_weight="1"
+	        	    android:layout_height="wrap_content"
+	        	    android:textSize="20sp"
+	        	    android:layout_margin="10dp"
+	        	    android:text="活动地点："/>
+	        	<EditText
+	        	    android:id="@+id/post_site_et"
+	        	    android:layout_width="0dp"
+	        	    android:layout_weight="1.5"
+	        	    android:layout_height="wrap_content"
+	        	    android:layout_gravity="center_vertical"
+	        	    android:background="@null"/>
+	        </LinearLayout>
+			<EditText
+			    android:id="@+id/post_detail_et"
+        	    android:layout_width="match_parent"
+        	    android:layout_height="180dp"
+        	    android:textSize="16sp"
+        	    android:gravity="left"
+        	    android:textColor="@color/black"
+        	    android:hint="用几句话描述此次活动（联系方式或者具体活动细节）"/>
+
+	       	<LinearLayout
+	       	    android:layout_width="match_parent"
+	       	    android:layout_height="100dp"
+	       	    android:orientation="horizontal">
+	       	    <RelativeLayout
+	       	        android:id="@+id/post_select_pic_rl"
+	       	        android:layout_width="80dp"
+	       	    	android:layout_height="80dp"
+	       	    	android:layout_margin="10dp"
+	       	    	android:background="@drawable/linearlayout_blackline"
+	       	    	>
+	       	        <ImageView
+	       	            android:id="@+id/post_select_pic_iv"
+	       	            android:layout_width="40dp"
+	       	            android:layout_height="40dp"
+	       	            android:layout_margin="10dp"
+	       	            android:layout_centerHorizontal="true"
+	       	            android:src="@drawable/camera"/>
+	       	        <TextView 
+	       	            android:layout_width="wrap_content"
+	       	            android:layout_height="wrap_content"
+	       	            android:text="添加图片"
+	       	            android:layout_below="@id/post_select_pic_iv"
+	       	            android:layout_centerHorizontal="true"
+	       	            android:textSize="14sp"/>
+	       	    </RelativeLayout>
+	       	    <ImageView 
+	       	        android:id="@+id/post_show_pic_iv"
+	       	        android:layout_width="80dp"
+	       	        android:layout_height="80dp"
+	       	        android:layout_margin="10dp"
+	       	        android:scaleType="fitXY"/>
+	       	</LinearLayout>
+        </LinearLayout>
+        
+    </ScrollView>
+    
+
+</LinearLayout>

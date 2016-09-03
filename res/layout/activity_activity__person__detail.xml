@@ -1,0 +1,574 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_bg"
+    android:orientation="vertical"
+    tools:context="com.vc.ui.Activity_Person_Detail" >
+
+	<include layout="@layout/include_titlebar"/>
+	
+	<ScrollView
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:scrollbars="vertical"
+	    android:layout_marginTop="6dp">
+		<LinearLayout
+		    android:layout_width="match_parent"
+		    android:layout_height="match_parent"
+		   	android:orientation="vertical">
+		   	<!-- 头像 -->
+			<LinearLayout
+			    android:layout_width="match_parent"
+			    android:layout_height="120dp"
+			    android:background="@color/white"
+			    android:orientation="horizontal" >
+	
+			    <ImageView
+			       android:id="@+id/p_info_avatar_iv"
+			       android:layout_width="70dp"
+			       android:layout_height="70dp"
+			       android:layout_margin="10dp"
+			       android:scaleType="fitXY"
+			       android:src="@drawable/detail_avatar"/>
+			    
+			    <RelativeLayout
+			        android:layout_width="match_parent"
+			        android:layout_height="wrap_content">
+			        <TextView
+			            android:id="@+id/p_info_nickname_tv"
+			            android:layout_width="wrap_content"
+			            android:layout_height="wrap_content"
+			            android:layout_margin="16dp"
+			            android:textColor="@color/black"
+			            android:text="昵称"/>
+			        <RelativeLayout
+			            android:id="@+id/p_info_edit_avatar_ll"
+			            android:layout_width="wrap_content"
+			            android:layout_height="wrap_content"
+			            android:layout_below="@id/p_info_nickname_tv"
+			            android:layout_marginTop="15dp"
+			            android:layout_alignLeft="@id/p_info_nickname_tv">
+			            <ImageView
+			                android:id="@+id/p_icon_edit_avatar_iv"
+			                android:layout_width="20dp"
+			                android:layout_height="20dp"
+			                android:src="@drawable/write"/>
+			            <TextView
+			                android:id="@+id/change_p_icon"
+			                android:layout_toRightOf="@id/p_icon_edit_avatar_iv"
+			                android:layout_alignBottom="@id/p_icon_edit_avatar_iv"
+			                android:layout_width="wrap_content"
+			                android:layout_height="wrap_content"
+			                android:text="修改头像"/>
+			        </RelativeLayout>
+
+			       
+			       
+			            
+			    </RelativeLayout>
+			</LinearLayout>
+			
+			<!-- 个性签名 -->
+			<LinearLayout
+			    android:layout_width="match_parent"
+			    android:layout_height="80dp"
+			   	android:layout_marginTop="10dp"
+			   	android:orientation="vertical"
+				android:background="@color/white">
+			    <RelativeLayout
+			        android:layout_width="match_parent"
+			        android:layout_height="wrap_content">
+				    <ImageView
+				        android:id="@+id/p_icon_sign_iv"
+				        android:layout_width="25dp"
+				        android:layout_height="25dp"
+				        android:layout_marginLeft="10dp"
+				        android:layout_marginTop="5dp"
+				        android:src="@drawable/sign"/>
+				    <TextView
+				        android:layout_width="wrap_content"
+				        android:layout_height="wrap_content"
+				        android:layout_toRightOf="@id/p_icon_sign_iv"
+				        
+				        android:layout_marginLeft="8dp"
+				        android:layout_marginTop="5dp"
+				        android:text="个性签名"
+				        android:typeface="monospace"
+				        android:textColor="@color/black"
+				        android:textSize="20sp"/>
+			   
+			    </RelativeLayout>
+			    
+			     <!-- 横线 -->
+			     <View
+	                android:layout_width="fill_parent"
+	                android:layout_height="1px"
+	                android:layout_margin="8dp"
+	                android:background="@color/divider" />
+			     
+			     <!-- 签名内容 -->
+			    <RelativeLayout
+			        android:id="@+id/p_info_sign_rl"
+			        android:layout_width="match_parent"
+			        android:layout_height="wrap_content">
+				    
+				    <TextView
+				        android:id="@+id/p_info_sign_tv"
+				        android:layout_width="wrap_content"
+				        android:layout_height="wrap_content"
+				        android:layout_marginLeft="10dp"
+				        android:layout_marginTop="5dp"
+				        android:text="(未填写)"
+				        android:typeface="monospace"
+				        android:textColor="@color/black"
+				        android:textSize="14sp"/>
+				    <ImageView
+				        android:id="@+id/p_info_sign_iv"
+				        android:layout_width="25dp"
+				        android:layout_height="25dp"
+				        android:layout_alignParentRight="true"
+				        android:layout_marginRight="10dp"
+				        android:src="@drawable/editing"/>
+			    </RelativeLayout> 
+			    
+			    <!-- 编辑签名 -->
+			    <LinearLayout
+			        android:id="@+id/p_info_sign_edit_ll"
+			        android:layout_width="match_parent"
+			        android:layout_height="wrap_content"
+			        android:visibility="gone">
+				    
+				    <EditText
+				        android:id="@+id/p_info_sign_et"
+				        android:layout_width="0dp"
+				        android:layout_weight="10"
+				        android:layout_height="25dp"
+				        android:layout_marginLeft="10dp"	       
+				        android:typeface="monospace"
+				        android:background="@null"
+				        android:textColor="@color/black"
+				        android:textSize="14sp"/>
+				    <TextView
+				        android:id="@+id/p_info_sign_cancle_button"
+				        android:layout_width="0dp"
+				        android:layout_height="25dp"
+				        android:layout_weight="2"
+				        android:text="取消"      
+				        android:textSize="14sp"
+				        android:gravity="center"
+				        android:textColor="@color/white"
+				        android:background="@drawable/linearlayout_round_normal"
+				        android:layout_alignParentRight="true"
+				        android:layout_marginRight="10dp"/>
+				    <TextView
+				        android:id="@+id/p_info_sign_sure_button"
+				        android:layout_width="0dp"
+				        android:layout_height="25dp"
+				        android:layout_weight="2"
+				        android:text="确定"      
+				        android:textSize="14sp"
+				        android:gravity="center"
+				        android:textColor="@color/white"
+				        android:background="@drawable/linearlayout_round_highlight"
+				        android:layout_alignParentRight="true"
+				        android:layout_marginRight="10dp"
+				        android:visibility="gone"/>
+			    </LinearLayout>
+			    
+			</LinearLayout>
+			
+			
+			<!-- 个人信息 -->
+			<LinearLayout
+			    android:layout_width="match_parent"
+			    android:layout_height="wrap_content"
+			    android:orientation="vertical"
+			    android:layout_marginTop="10dp"
+			    android:background="@color/white">
+			    <RelativeLayout 
+			        android:layout_width="match_parent"
+			        android:layout_height="wrap_content">
+				    <ImageView
+				        android:id="@+id/p_info_icon_info_iv"
+				        android:layout_width="25dp"
+				        android:layout_height="25dp"
+				        android:layout_marginLeft="10dp"
+				        android:layout_marginTop="5dp"
+				        android:src="@drawable/business"/>
+				    <TextView 
+				        android:layout_width="match_parent"
+				        android:layout_height="wrap_content"
+				        android:layout_toRightOf="@id/p_info_icon_info_iv"
+				        android:layout_marginLeft="10dp"
+				        android:layout_marginTop="5dp"
+				        android:text="个人信息"
+				        android:typeface="monospace"
+				        android:textColor="@color/black"
+				        android:textSize="20sp"/>
+			    
+			    </RelativeLayout>
+			    <!-- 横线 -->
+			    <View
+	                android:layout_width="fill_parent"
+	                android:layout_height="1px"
+	                android:layout_margin="8dp"
+	                android:background="@color/divider" />
+			    
+			    
+			    <!-- 个人信息详细 -->
+			    <LinearLayout
+			         android:id="@+id/p_info_detail_ll"     
+			        android:layout_width="match_parent"
+			        android:layout_height="match_parent"
+			        android:orientation="vertical">
+					 <!-- 性别 -->
+				    <LinearLayout
+				        android:layout_width="match_parent"
+				        android:layout_height="match_parent"
+				        android:orientation="horizontal">
+					    <TextView
+					       	android:layout_width="0dp"
+					       	android:layout_weight="2"
+					       	android:layout_height="wrap_content"
+					       	android:layout_margin="7dp"
+					       	android:text="性别:"
+					       	android:textColor="@color/black"
+					       	android:textSize="14sp"/>
+				    	<TextView
+				    	    android:id="@+id/p_info_sex_tv"
+				    	    android:layout_weight="6"
+				    	    android:layout_width="0dp"
+				    	    android:layout_height="wrap_content"
+				    	    android:layout_margin="7dp"
+				    	    android:text="(未填写)"/>
+				    </LinearLayout>
+				    
+				    <!-- 出生日期 -->
+				    <LinearLayout
+				        android:layout_width="match_parent"
+				        android:layout_height="wrap_content"
+				        android:orientation="horizontal">
+					    <TextView
+					       	android:layout_width="0dp"
+					       	android:layout_weight="2"
+					       	android:layout_height="wrap_content"
+					       	android:layout_margin="7dp"
+					       	android:text="出生日期:"
+					       	android:textColor="@color/black"
+					       	android:textSize="14sp"/>
+				    	<TextView
+				    	    android:id="@+id/p_info_birthday_tv"
+				    	    android:layout_width="0dp"
+				    	    android:layout_weight="6"
+				    	    android:layout_height="wrap_content"
+				    	    android:layout_margin="7dp"
+				    	    android:text="(未填写)"/>
+				    </LinearLayout>
+				    
+				   <!-- 住址 -->
+				     <LinearLayout
+				        android:layout_width="match_parent"
+				        android:layout_height="wrap_content"
+				        android:orientation="horizontal">
+					    <TextView
+					       	android:layout_width="0dp"
+					       	android:layout_weight="2"
+					       	android:layout_height="wrap_content"
+					       	android:layout_margin="7dp"
+					       	android:text="住址:"
+					       	android:textColor="@color/black"
+					       	android:textSize="14sp"/>
+				    	<TextView
+				    	    android:id="@+id/p_info_address_tv"
+				    	    android:layout_width="0dp"
+				    	    android:layout_weight="6"
+				    	    android:layout_height="wrap_content"
+				    	    android:layout_margin="7dp"
+				    	    android:text="(未填写)"
+				    	    />
+				    </LinearLayout>
+				    
+				     <!-- 学校 -->
+				     <LinearLayout
+				        android:layout_width="match_parent"
+				        android:layout_height="wrap_content"
+				        android:orientation="horizontal">
+					    <TextView
+					       	android:layout_width="0dp"
+					       	android:layout_weight="2"
+					       	android:layout_height="wrap_content"
+					       	android:layout_margin="7dp"
+					       	android:text="学校:"
+					       	android:textColor="@color/black"
+					       	android:textSize="14sp"/>
+				    	<TextView
+				    	    android:id="@+id/p_info_college_tv"
+				    	    android:layout_width="0dp"
+				    	    android:layout_weight="6"
+				    	    android:layout_height="wrap_content"
+				    	    android:layout_margin="7dp"
+				    	    android:text="(未填写)"/>
+				    </LinearLayout>
+				    
+				    <!-- 入学年份 -->
+				     <LinearLayout
+				        android:layout_width="match_parent"
+				        android:layout_height="wrap_content"
+				        android:orientation="horizontal">
+					    <TextView
+					       	android:layout_width="0dp"
+					       	android:layout_weight="2"
+					       	android:layout_height="wrap_content"
+					       	android:layout_margin="7dp"
+					       	android:text="入学年份:"
+					       	android:textColor="@color/black"
+					       	android:textSize="14sp"/>
+				    	<TextView
+				    	    android:id="@+id/p_info_entrance_tv"
+				    	    android:layout_width="0dp"
+				    	    android:layout_weight="6"
+				    	    android:layout_height="wrap_content"
+				    	    android:layout_margin="7dp"
+				    	    android:text="(未填写)"/>
+				    </LinearLayout>
+				    
+				    <!-- 兴趣爱好 -->
+				     <LinearLayout
+				        android:layout_width="match_parent"
+				        android:layout_height="wrap_content"
+				        android:orientation="horizontal">
+					    <TextView
+					       	android:layout_width="0dp"
+					       	android:layout_weight="2"
+					       	android:layout_height="wrap_content"
+					       	android:layout_margin="7dp"
+					       	android:text="兴趣爱好:"
+					       	android:textColor="@color/black"
+					       	android:textSize="14sp"/>
+				    	<TextView
+				    	    android:id="@+id/p_info_hobby_tv"
+				    	    android:layout_width="0dp"
+				    	    android:layout_weight="6"
+				    	    android:layout_height="wrap_content"
+				    	    android:layout_margin="7dp"
+				    	    android:text="(未填写)"/>
+				    </LinearLayout>
+					<RelativeLayout
+				        android:layout_width="match_parent"
+				        android:layout_height="wrap_content"
+				        android:layout_margin="10dp">  
+					   	 <ImageView
+					        android:id="@+id/p_info_editinfo_button"
+					        android:layout_width="25dp"
+					        android:layout_height="25dp"
+					        android:layout_alignParentRight="true"
+					        android:layout_marginRight="10dp"    
+					        android:src="@drawable/editing"/>
+				   	</RelativeLayout>
+			    </LinearLayout>
+			    
+			    <!-- 个人信息编辑-->
+			    <LinearLayout
+			        android:id="@+id/p_info_detail_edit_ll" 
+			        android:layout_width="match_parent"
+			        android:layout_height="match_parent"
+			        android:orientation="vertical"
+			        android:visibility="gone">
+					 <!-- 性别 -->
+				    <LinearLayout
+				        android:layout_width="match_parent"
+				        android:layout_height="match_parent"
+				        android:orientation="horizontal">
+					    <TextView
+					       	android:layout_width="0dp"
+					       	android:layout_weight="2"
+					       	android:layout_height="wrap_content"
+					       	android:layout_margin="7dp"
+					       	android:text="性别:"
+					       	android:textColor="@color/black"
+					       	android:textSize="14sp"/>
+				    	<Spinner
+				            android:id="@+id/p_info_sex_spinner"
+				            android:layout_weight="6"
+				            android:layout_width="0dp"
+				            android:layout_height="match_parent"
+				            android:background="@color/white"
+				            android:entries="@array/spinnername"
+				            android:prompt="@string/sex_prompt"
+				            />
+				    	
+				    	<!-- <EditText
+				    	    android:id="@+id/p_info_sex_et"
+				    	    android:layout_weight="6"
+				    	    android:layout_width="0dp"
+				    	    android:layout_height="wrap_content"
+				    	    android:textSize="18sp"
+				    	    android:background="@null"
+				    	    android:layout_margin="7dp"/> -->
+				    </LinearLayout>
+				    
+				    <!-- 出生日期 -->
+				    <LinearLayout
+				        android:layout_width="match_parent"
+				        android:layout_height="wrap_content"
+				        android:orientation="horizontal">
+					    <TextView
+					       	android:layout_width="0dp"
+					       	android:layout_weight="2"
+					       	android:layout_height="wrap_content"
+					       	android:layout_margin="7dp"
+					       	android:text="出生日期:"
+					       	android:textColor="@color/black"
+					       	android:textSize="14sp"/>
+				    
+				    	<EditText
+				            android:id="@+id/p_info_birthday_et"
+				            android:layout_weight="6"
+				    	    android:layout_width="0dp"
+				    	    android:layout_height="wrap_content"
+				    	    android:textSize="18sp"
+				    	    android:background="@null" 
+				            android:ems="10"
+				            android:layout_margin="7dp"
+				            android:inputType="date"
+				            />            
+				    </LinearLayout>
+				    
+				   <!-- 住址 -->
+				     <LinearLayout
+				        android:layout_width="match_parent"
+				        android:layout_height="wrap_content"
+				        android:orientation="horizontal">
+					    <TextView
+					       	android:layout_width="0dp"
+					       	android:layout_weight="2"
+					       	android:layout_height="wrap_content"
+					       	android:layout_margin="7dp"
+					       	android:text="住址:"
+					       	android:textColor="@color/black"
+					       	android:textSize="14sp"/>
+				    	
+				    	<EditText
+				    	    android:id="@+id/p_info_address_et"
+				    	    android:layout_weight="6"
+				    	    android:layout_width="0dp"
+				    	    android:layout_height="wrap_content"
+				    	    android:textSize="18sp"
+				    	    android:background="@null"
+				    	    android:layout_margin="7dp"
+				    	    />
+				    </LinearLayout>
+				    
+				     <!-- 学校 -->
+				     <LinearLayout
+				        android:layout_width="match_parent"
+				        android:layout_height="wrap_content"
+				        android:orientation="horizontal">
+					    <TextView
+					       	android:layout_width="0dp"
+					       	android:layout_weight="2"
+					       	android:layout_height="wrap_content"
+					       	android:layout_margin="7dp"
+					       	android:text="学校:"
+					       	android:textColor="@color/black"
+					       	android:textSize="14sp"/>
+				    	<EditText
+				    	    android:id="@+id/p_info_college_et"
+				    	    android:layout_weight="6"
+				    	    android:layout_width="0dp"
+				    	    android:layout_height="wrap_content"
+				    	    android:textSize="18sp"
+				    	    android:background="@null"
+				    	    android:layout_margin="7dp"
+				    	    />
+				    </LinearLayout>
+				    
+				    <!-- 入学年份 -->
+				     <LinearLayout
+				        android:layout_width="match_parent"
+				        android:layout_height="wrap_content"
+				        android:orientation="horizontal">
+					    <TextView
+					       	android:layout_width="0dp"
+					       	android:layout_weight="2"
+					       	android:layout_height="wrap_content"
+					       	android:layout_margin="7dp"
+					       	android:text="入学年份:"
+					       	android:textColor="@color/black"
+					       	android:textSize="14sp"/>
+				    	<EditText
+				    	    android:id="@+id/p_info_entrance_et"
+				    	    android:layout_weight="6"
+				    	    android:layout_width="0dp"
+				    	    android:layout_height="wrap_content"
+				    	    android:textSize="18sp"
+				    	    android:background="@null"
+				    	    android:layout_margin="7dp"
+				    	    />
+				    </LinearLayout>
+				    
+				    <!-- 兴趣爱好 -->
+				     <LinearLayout
+				        android:layout_width="match_parent"
+				        android:layout_height="wrap_content"
+				        android:orientation="horizontal">
+					    <TextView
+					       	android:layout_width="0dp"
+					       	android:layout_weight="2"
+					       	android:layout_height="wrap_content"
+					       	android:layout_margin="7dp"
+					       	android:text="兴趣爱好:"
+					       	android:textColor="@color/black"
+					       	android:textSize="14sp"/>
+				    	<EditText
+				    	    android:id="@+id/p_info_hobby_et"
+				    	    android:layout_weight="6"
+				    	    android:layout_width="0dp"
+				    	    android:layout_height="wrap_content"
+				    	    android:textSize="18sp"
+				    	    android:background="@null"
+				    	    android:layout_margin="7dp"
+				    	    />
+				    </LinearLayout>
+					<RelativeLayout
+				        android:layout_width="match_parent"
+				        android:layout_height="wrap_content"
+				        android:layout_margin="10dp">  
+					   	 
+					   	 <LinearLayout
+					   	     
+					   	     android:layout_width="wrap_content"
+					   	     android:layout_height="wrap_content"
+					   	     android:orientation="horizontal"
+					   	     android:layout_alignParentRight="true">
+						   	 <TextView
+						        android:id="@+id/p_info_editinfo_cancle_button"
+						        android:layout_width="35dp"
+						        android:layout_height="25dp"
+						        android:text="取消"      
+						        android:textSize="14sp"
+						        android:gravity="center"
+						        android:textColor="@color/white"
+						        android:background="@drawable/linearlayout_round_normal"
+						        android:layout_marginRight="5dp"/>
+						    <TextView
+						        android:id="@+id/p_info_editinfo_sure_button"
+						        android:layout_width="35dp"
+						        android:layout_height="25dp"
+						        android:text="确定"      
+						        android:textSize="14sp"
+						        android:gravity="center"
+						        android:textColor="@color/white"
+						        android:background="@drawable/linearlayout_round_highlight"
+						        android:layout_marginRight="5dp"/>
+					    </LinearLayout>
+				   	</RelativeLayout>
+			    </LinearLayout>
+			    
+			</LinearLayout>
+		</LinearLayout>
+	</ScrollView>
+    
+	
+</LinearLayout>

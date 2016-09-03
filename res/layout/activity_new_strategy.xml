@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_bg"
+    android:orientation="vertical" >
+    
+    <include layout="@layout/include_titlebar"/>
+   	<LinearLayout
+   	    android:layout_width="match_parent"
+   	    android:layout_height="match_parent"
+   	    android:layout_marginLeft="6dp"
+   	    android:layout_marginRight="6dp"
+   	    android:background="@drawable/activity_block">
+   	    <view.ReboundScrollView
+        	android:layout_width="match_parent"
+        	android:layout_height="wrap_content">
+        	<LinearLayout
+        	    android:layout_width="match_parent"
+        	    android:layout_height="wrap_content"
+        	    android:orientation="vertical">
+        	    
+        	    <TextView
+        	        android:id="@+id/brief_intro_tv"
+        	        android:layout_width="match_parent"
+        	        android:layout_height="wrap_content"
+        	        android:layout_margin="10dp"
+        	        android:textSize="14sp"
+        	        android:textColor="@color/black"
+        	        android:text="重理工简介"/>
+        	    <View
+				     android:layout_width="fill_parent"
+				     android:layout_height="1px"
+				     android:layout_marginLeft="10dp"
+				     android:layout_marginRight="10dp"
+				     android:background="@color/divider" />
+        	    <!-- 报到流程 -->
+        	    <TextView
+        	        android:id="@+id/Registration_process_tv"
+        	        android:layout_width="match_parent"
+        	        android:layout_height="wrap_content"
+        	        android:layout_margin="10dp"
+        	        android:textSize="14sp"
+        	        android:textColor="@color/black"
+        	        android:text="新生报到报到流程"/>
+        	    <View
+				     android:layout_width="fill_parent"
+				     android:layout_height="1px"
+				     android:layout_marginLeft="10dp"
+				     android:layout_marginRight="10dp"
+				     android:background="@color/divider" />
+        	    <!-- 交通路线 -->
+        	    <TextView
+        	        android:id="@+id/to_school_route_tv"
+        	        android:layout_width="match_parent"
+        	        android:layout_height="wrap_content"
+        	        android:layout_margin="10dp"
+        	        android:textSize="14sp"
+        	        android:textColor="@color/black"
+        	        android:text="交通路线"/>
+        	    <View
+				     android:layout_width="fill_parent"
+				     android:layout_height="1px"
+				     android:layout_marginLeft="10dp"
+				     android:layout_marginRight="10dp"
+				     android:background="@color/divider" />
+        	  	 <!-- 花溪校园一览 -->
+        	    <TextView
+        	        android:id="@+id/huaxi_school_tv"
+        	        android:layout_width="match_parent"
+        	        android:layout_height="wrap_content"
+        	        android:layout_margin="10dp"
+        	        android:textSize="14sp"
+        	        android:textColor="@color/black"
+        	        android:text="花溪校园一览"/>
+        	    <View
+				     android:layout_width="fill_parent"
+				     android:layout_height="1px"
+				     android:layout_marginLeft="10dp"
+				     android:layout_marginRight="10dp"
+				     android:background="@color/divider" />
+        	    
+        	    <!-- 两江校园一览 -->
+        	    <TextView
+        	        android:id="@+id/liangjiang_school_tv"
+        	        android:layout_width="match_parent"
+        	        android:layout_height="wrap_content"
+        	        android:layout_margin="10dp"
+        	        android:textSize="14sp"
+        	        android:textColor="@color/black"
+        	        android:text="两江校园一览"/>
+        	    <View
+				     android:layout_width="fill_parent"
+				     android:layout_height="1px"
+				     android:layout_marginLeft="10dp"
+				     android:layout_marginRight="10dp"
+				     android:background="@color/divider" />
+        	</LinearLayout>
+    </view.ReboundScrollView>
+	</LinearLayout>
+</LinearLayout>

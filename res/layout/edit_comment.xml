@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="45dp"
+    android:orientation="horizontal" 
+    android:background="@color/white">
+    <RelativeLayout 
+        android:layout_width="0dp"
+		android:layout_height="match_parent"
+		android:layout_weight="1">
+	   <ImageView
+		    android:id="@+id/emotion_iv"
+		    android:layout_width="30dp"
+		    android:layout_height="30dp"
+		    android:layout_centerInParent="true"
+		    android:background="@drawable/icon_emoji"/>
+   </RelativeLayout>
+    <EditText
+        android:id="@+id/write_comment_et"
+        android:layout_width="0dp"
+        android:layout_margin="3dp"
+        android:background="@null"
+        android:layout_height="match_parent"
+        android:layout_weight="6"
+        android:hint="评论此活动"/>
+    
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="2">
+    	
+        <TextView
+            android:id="@+id/sure_comment_highlight_tv"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.5"
+            android:layout_margin="5dp"
+            android:background="@drawable/linearlayout_round_highlight"
+            android:text="发送"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:visibility="gone"/>
+        <TextView
+            android:id="@+id/sure_comment_normal_tv"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.5"
+            android:layout_margin="5dp"
+            android:background="@drawable/linearlayout_round_normal"
+            android:text="发送"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="18sp"/>
+    </LinearLayout>
+
+</LinearLayout>

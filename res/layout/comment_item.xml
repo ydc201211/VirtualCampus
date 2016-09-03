@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="72dp"
+    android:orientation="horizontal"
+    android:background="@color/white">
+     
+     <view.ImageView_Circle
+        xmlns:ptr="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/iv_comment_avatar" 
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="13dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_launcher"/>
+ 
+    <RelativeLayout
+        android:id="@+id/rl_content"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:padding="10dp" >
+
+        <TextView
+            android:id="@+id/tv_comment_subhead"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="13dp"
+             />
+		<TextView
+            android:id="@+id/tv_comment_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/mid_gray"
+            android:layout_below="@id/tv_comment_subhead"
+            android:textSize="10dp"
+            />
+		<TextView
+            android:id="@+id/tv_comment_caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+           
+            android:textColor="@color/black" />
+    </RelativeLayout>
+
+</LinearLayout>

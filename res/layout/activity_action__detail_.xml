@@ -1,0 +1,44 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.vc.ui.Action_Detail_Activity"
+    android:orientation="vertical">
+    <!-- 导入标题栏 -->
+	<include layout="@layout/include_titlebar"/>
+	
+    <RelativeLayout
+        android:id="@+id/rl_body"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" 
+        android:background="@color/gray_bg">
+
+	     <com.handmark.pulltorefresh.library.PullToRefreshListView
+	         xmlns:ptr="http://schemas.android.com/apk/res-auto"
+	         
+	         android:id="@+id/plv_action_detail"
+	         android:layout_width="match_parent"
+	         android:layout_height="match_parent"
+	         android:background="@color/gray_bg"
+	         style="@style/ListViewLineDivider"/>
+
+        <include
+            android:id="@+id/action_detail_tab"
+            layout="@layout/action_detail_tab"
+            android:visibility="gone" />
+    </RelativeLayout>
+	<View
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:background="@color/gray" />
+    <include
+        android:id="@+id/edit_conmment_controlbar"
+        layout="@layout/edit_comment" />
+    
+     <include
+            android:id="@+id/chat_face_container"
+            layout="@layout/chat_face_container"
+            android:visibility="gone" />
+
+</LinearLayout>

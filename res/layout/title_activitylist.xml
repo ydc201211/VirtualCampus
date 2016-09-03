@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="50dp"
+	    android:orientation="horizontal"
+	    android:background="@color/title_no_back"> 
+      
+        <!-- 返回按钮 -->
+	    <RelativeLayout
+	        android:id="@+id/aclist_back"
+	        android:layout_weight="1"
+	        android:layout_width="0dp"
+	        android:layout_height="match_parent"
+	        android:layout_gravity="left">
+	        <ImageView
+	            android:layout_width="35dp"
+	            android:layout_height="match_parent"
+	            android:src="@drawable/left"/>
+		</RelativeLayout>
+		
+		<RelativeLayout
+		    android:layout_weight="4"
+	        android:layout_width="0dp"
+	        android:layout_height="match_parent">
+	        <EditText
+	            android:layout_width="match_parent"
+	            android:layout_height="32dp"
+	           	android:layout_centerInParent="true"
+	            android:hint="搜活动"
+	            android:layout_margin="6dp"
+	            android:background="@drawable/activity_block"
+	            android:textSize="16sp" >
+	            
+	        </EditText>
+
+	    </RelativeLayout>
+	    
+	    <RelativeLayout
+	        android:layout_width="0dp"
+	        android:layout_height="match_parent"
+		    android:layout_weight="1">
+	        
+	        <!-- 用户输入后显示，防止输入为空 -->
+	        <TextView
+	            android:visibility="gone"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	           	android:layout_centerInParent="true"
+	            android:text="搜索"
+	            android:padding="10dp"
+	            android:textSize="16sp"
+	            android:textColor="@color/white" />
+	    </RelativeLayout>
+	</LinearLayout>
+
+</LinearLayout>

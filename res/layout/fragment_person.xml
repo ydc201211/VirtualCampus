@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:background="@color/titlebar"
+        android:gravity="center"
+        android:orientation="vertical" >
+		
+        <TextView
+            android:id="@+id/addFriends"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="20dp"
+            android:text="添加好友"
+            android:textColor="@color/white"
+            android:textSize="16sp"/>
+        <view.ImageView_Circle
+            android:layout_gravity="center"
+            android:id="@+id/imagehead"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/nologin" />
+
+        <TextView
+            android:id="@+id/tvlogin"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="登录/注册"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+    </LinearLayout>
+    
+    <View
+	     android:layout_width="fill_parent"
+	     android:layout_height="1px"
+	     android:layout_marginLeft="10dp"
+	     android:layout_marginRight="10dp"
+	     android:background="@color/divider" />
+    
+    <!-- 我的活动 -->
+    <LinearLayout
+        android:id="@+id/my_Activity_ll"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:gravity="center_vertical"
+        android:background="@color/white"
+        android:orientation="horizontal">       
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="15dp"
+            android:gravity="center"
+            android:src="@drawable/huodong_1"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center|left"
+            android:layout_weight="1"
+            android:layout_marginLeft="15dp"
+            android:text="我的活动"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="15dp"
+            android:gravity="center_vertical"
+            android:text=">"
+            android:textColor="@color/gray"
+            android:textSize="22sp" />
+    </LinearLayout>
+    
+    <View
+	     android:layout_width="fill_parent"
+	     android:layout_height="1px"
+	     android:layout_marginLeft="10dp"
+	     android:layout_marginRight="10dp"
+	     android:background="@color/divider" />
+    
+    <!-- 新生攻略 -->
+    <LinearLayout
+       
+        android:id="@+id/strategy_ll"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:gravity="center_vertical"
+        android:background="@color/white"
+        android:orientation="horizontal">
+        
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="15dp"
+            android:gravity="center"
+            android:src="@drawable/new_strategy"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center|left"
+            android:layout_weight="1"
+            android:layout_marginLeft="15dp"
+            android:text="新生攻略"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="15dp"
+            android:gravity="center_vertical"
+            android:text=">"
+            android:textColor="@color/gray"
+            android:textSize="22sp" />
+    </LinearLayout>   
+    <View
+	     android:layout_width="fill_parent"
+	     android:layout_height="1px"
+	     android:layout_marginLeft="10dp"
+	     android:layout_marginRight="10dp"
+	     android:background="@color/divider" />
+    
+    <!-- 设置 -->
+    <LinearLayout
+        android:id="@+id/set_ll"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:gravity="center_vertical"
+        android:background="@color/white"
+        android:orientation="horizontal">
+        
+        <ImageView
+           android:layout_width="25dp"
+           android:layout_height="25dp"
+           android:layout_marginLeft="15dp"
+           android:gravity="center"
+           android:src="@drawable/set" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="15dp"
+            android:text="设置"
+            android:gravity="center_vertical|left"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="15dp"
+            android:gravity="center_vertical|left"
+            android:text=">"
+            android:textColor="@color/gray"
+            android:textSize="22sp" />
+    </LinearLayout>
+    
+   	<View
+	     android:layout_width="fill_parent"
+	     android:layout_height="1px"
+	     android:layout_marginLeft="10dp"
+	     android:layout_marginRight="10dp"
+	     android:background="@color/divider" />
+   <LinearLayout
+       
+        android:id="@+id/update_ll"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:gravity="center_vertical"
+        android:background="@color/white"
+        android:orientation="horizontal">
+        
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="15dp"
+            android:gravity="center"
+            android:src="@drawable/update"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center|left"
+            android:layout_weight="1"
+            android:layout_marginLeft="15dp"
+            android:text="检查更新"
+            android:textColor="@color/black"
+            android:textSize="16sp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="15dp"
+            android:gravity="center_vertical"
+            android:text=">"
+            android:textColor="@color/gray"
+            android:textSize="22sp" />
+    </LinearLayout>
+    <View
+	     android:layout_width="fill_parent"
+	     android:layout_height="1px"
+	     android:layout_marginLeft="10dp"
+	     android:layout_marginRight="10dp"
+	     android:background="@color/divider" />
+   <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"/>
+  
+</LinearLayout>

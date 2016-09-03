@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, XListViewActivity!</string>
+    <string name="xlistview_header_hint_normal">下拉刷新</string>
+    <string name="xlistview_header_hint_ready">松开刷新数据</string>
+    <string name="xlistview_header_hint_loading">正在加载...</string>
+    <string name="xlistview_header_last_time">上次更新时间：</string>
+    <string name="xlistview_footer_hint_normal">查看更多</string>
+    <string name="xlistview_footer_hint_ready">松开载入更多</string>
+    <string name="app_name">校园行</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_action__detail_">Action_Detail_Activity</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_register">RegisterActivity</string>
+    <string name="title_activity_activity__person__detail">Activity_Person_Detail</string>
+    <string name="sex_prompt">请选择性别</string>
+
+    <string-array name="spinnername">
+        <item>男</item>
+        <item>女 </item>
+    </string-array>
+
+    <string name="title_activity_activity__my">Activity_MyActivity</string>
+    <string name="title_activity_activity__post">Activity_Post</string>
+    <string name="title_activity_activity__new_strategy">Activity_NewStrategy</string>
+    <string name="title_activity_activity__web_view">Activity_WebView</string>
+    <string name="title_activity_activity__college_intro">Activity_CollegeIntro</string>
+    <string name="college_intro_content">        	\t\t重庆理工大学前身是创办于1940年的国民政府兵工署第11技工学校（对外化名“士继公学”）。
+        	1950年后，学校先后更名为21兵工厂工业职业学校、西南军政委员会西南工业部工业学校、重庆机械工业学校、第二机械工业部西南第一工业学校、重庆工业学校、重庆机械制造工业学校、重庆第一机械制造工业学校。1957年，昆明仪器制造工业学校金属切削专业并入。
+        	1960年，升办为重庆工业专科学校。1965年，升格为重庆工业学院。1985年，经国家教委批准改建为重庆工业管理学院。
+        	1999年，由中国兵器工业总公司划转重庆市管理，实行中央与地方共建、以地方管理为主的管理体制，同年更名为重庆工学院。
+        	2001年，重庆市经济管理干部学院整体并入。2009年，经教育部批准更名为重庆理工大学。\n
+        	\t\t学校现有教职工1561人，其中专任教师1321人，包括“新世纪百千万人才工程”国家级人选3人，国务院政府特殊津贴获得者14人，重庆市学术技术带头人13人，重庆市有突出贡献的中青年专家3人，重庆市高校优秀中青年骨干教师等其他省部级优秀人才60余人。具有高级专业技术职务641人，具有硕士、博士学位近1000人，另聘兼职教师300余人。目前，全日制在校本专科生、研究生、留学生等近25000人。\n
+        	\t\t学校以人才培养为根本任务，形成了理、工、文、管、经、法、医、艺等协调发展的多学科体系。学校面向全国31个省市招生，以本科教育为主，兼有研究生教育、职业技术教育、留学生教育、继续教育。现有21个党政管理机构，21个教学机构，4个教学辅助机构，3个研究机构。学校设有本科专业58个，其中国家级特色专业建设点4个、综合改革试点专业2个，重庆市级特色专业建设点6个、综合改革试点专业2个、“三特行动计划”特色专业5个。现有一级学科硕士学位授权点11个、二级学科硕士学位授权点39个、专业学位授权点11个、省（部）级一级重点学科8个。现有国家级教学团队1个，精品课程1门、双语教学示范课程1门、精品资源共享课入选课程1门，大学生校外实践教育基地1个；重庆市级教学团队12个、精品课程20门、精品视频公开课程6门、精品资源共享课程13门、双语教学示范课程3门、研究生优质课程10门，人才培养模式创新实验区7个、实验教学示范中心7个、大学生校外实践教育基地2个。学校入选国家级大学生创新创业训练计划，获得国家级大学生创新创业训练计划项目12个，市级大学生创新创业训练计划项目48个。学校学生在数学建模竞赛、电子设计竞赛、“挑战杯”课外科技作品竞赛等全国竞赛活动中成绩显著，近三年获得包括美国大学生数学建模竞赛国际一等奖3项在内的各类奖项452项。教学成果获得省（部）级以上奖励23项。学校毕业生获得了各行各业用人单位的一致好评。学校曾荣获“全国毕业生就业典型经验高校50强”、“重庆市就业工作先进集体”等荣誉。	</string>
+    <string name="title_activity_activity__reg__process">Activity_Reg_Process</string>
+    <string name="title_activity_activity__point_search">Activity_PointSearch</string>
+    <string name="title_activity_activity__welcome">Activity_Welcome</string>
+    <string name="title_activity_activity__big_picture">Activity_BigPicture</string>
+    <string name="title_activity_activity__add_friend">Activity_AddFriend</string>
+
+</resources>

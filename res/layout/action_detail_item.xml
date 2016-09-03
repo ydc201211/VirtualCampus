@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_card_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:orientation="horizontal"    
+        android:background="@color/white"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:id="@+id/ac_detail_pic_LL"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/ac_detail_pic_Iv"
+                android:layout_width="170dp"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY" />
+            
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_toRightOf="@id/ac_detail_pic_LL"
+            android:layout_alignBottom="@id/ac_detail_pic_LL"
+            android:padding="5dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:padding="2dp">
+                <TextView
+
+                    android:id="@+id/tv_detail_theme"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:text="操场夜跑"
+                    android:textColor="@color/black"/>
+            </LinearLayout>
+           <!-- 活动主持者 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                android:padding="5dp">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:text="主持者  :"
+                    android:textSize="13sp"
+                    android:textColor="@color/gray_1"/>
+                <TextView
+                    android:id="@+id/tv_detail_host"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:textSize="14sp"
+                    android:text="超超超人在旅行"
+                    android:textColor="@color/black"/>
+            </LinearLayout>
+
+       		<!-- 活动时间 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:padding="5dp"
+                android:orientation="horizontal"
+                android:layout_weight="1">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:text="时间 :"
+                    android:textSize="13sp"
+                    android:textColor="@color/gray_1"/>
+
+                <TextView
+                    android:id="@+id/tv_detail_time"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:textSize="14sp"
+                    android:text="2016.4.1 21:00"
+                    android:textColor="@color/black"/>
+            </LinearLayout>
+
+           <!--  活动地点 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                android:padding="5dp">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:text="地点 :"
+                    android:textSize="13sp"
+                    android:textColor="@color/gray_1"/>
+                <TextView
+                    android:id="@+id/tv_detail_site"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:textSize="14sp"
+                    android:text="花溪操场"
+                    android:textColor="@color/black"/>
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+    <ScrollView
+	    android:layout_width="match_parent"
+	    android:layout_height="60dp"
+	    android:scrollbars="vertical"
+	    android:layout_marginTop="6dp">
+	    <LinearLayout
+	         android:layout_width="match_parent"
+	    	 android:layout_height="match_parent"
+	    	 android:layout_margin="8dp"
+	    	 android:background="@color/gray_bg">
+	    	<TextView
+	    	   	android:id="@+id/tv_detail_detail"
+	    	    android:layout_width="match_parent"
+	    	    android:layout_height="wrap_content"
+	    	    
+	    	    android:layout_margin="8dp"
+	    	    android:text="无活动详细信息..."/>
+	    </LinearLayout>
+    </ScrollView>
+	
+</LinearLayout>

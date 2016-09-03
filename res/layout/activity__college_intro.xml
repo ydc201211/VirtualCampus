@@ -1,0 +1,44 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context="${relativePackage}.${activityClass}" >
+	
+	<include layout="@layout/include_titlebar"/>
+		
+		       
+	 <view.ReboundScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout 
+		   android:layout_width="match_parent"
+		   android:layout_height="wrap_content"
+		   android:orientation="vertical">
+        	<TextView
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="重庆理工大学"
+		       	android:textColor="@color/black"
+		        android:textSize="20sp"
+		        android:layout_marginTop="10dp"
+		        android:layout_marginLeft="10dp"/>
+		 	<ImageView
+		        android:layout_width="match_parent"
+		        android:layout_height="160dp"
+		        android:layout_margin="10dp"
+		        android:src="@drawable/schoolview"
+		        />
+		        
+		        
+		  	<TextView
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="@string/college_intro_content"
+		        android:lineSpacingMultiplier="1.5"
+		        android:textSize="16sp"
+		        android:paddingLeft="2dp"/>
+	  	</LinearLayout>
+	  </view.ReboundScrollView>
+</LinearLayout>

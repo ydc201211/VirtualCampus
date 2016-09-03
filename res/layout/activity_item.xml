@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="250dp"
+    android:descendantFocusability="blocksDescendants">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:orientation="horizontal"
+       
+        android:background="@color/white"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:id="@+id/ac_pic_LL"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+            
+            <ImageView
+		        android:id="@+id/ac_pic_Iv"
+		        android:layout_height="match_parent"
+                android:scaleType="fitXY"
+		        android:layout_width="150dp"/>
+            
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_toRightOf="@id/ac_pic_LL"
+            android:layout_alignBottom="@id/ac_pic_LL"
+            android:padding="5dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:padding="2dp">
+                <TextView
+
+                    android:id="@+id/theme_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:text="操场夜跑"
+                    android:textColor="@color/black"/>
+            </LinearLayout>
+           <!-- 活动主持者 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                android:padding="5dp">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:text="主持者  :"
+                    android:textColor="@color/gray_1"/>
+                <TextView
+                    android:id="@+id/host_Tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:textSize="14sp"
+                    android:text="超超超人在旅行"
+                    android:textColor="@color/black"/>
+            </LinearLayout>
+
+       		<!-- 活动时间 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:padding="5dp"
+                android:orientation="horizontal"
+                android:layout_weight="1">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:text="时间 :"
+                     android:textColor="@color/gray_1"/>
+
+                <TextView
+                    android:id="@+id/time_Tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:textSize="14sp"
+                    android:text="2016.4.1 21:00"
+                    android:textColor="@color/black"/>
+            </LinearLayout>
+
+           <!--  活动地点 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                android:padding="5dp">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:text="地点 :"
+                    android:textColor="@color/gray_1"/>
+                <TextView
+                    android:id="@+id/site_Tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:textSize="14sp"
+                    android:text="花溪操场"
+                    android:textColor="@color/black"/>
+            </LinearLayout>
+            
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+
+    <!--底部按钮-->
+    
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#FFF3F3FC"
+        android:orientation="horizontal">
+        
+        <RelativeLayout
+           	android:id="@+id/a_ll"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+        	<LinearLayout 
+        	    android:layout_width="wrap_content"
+        	    android:layout_height="wrap_content"
+        	    android:layout_centerInParent="true">
+	        	<ImageView 
+	        	    android:layout_width="wrap_content"
+	        	    android:layout_height="wrap_content"  	    
+	        	    android:src="@drawable/icon_join"/>
+	        	<TextView
+	        	    android:id="@+id/rb_join"
+	        	    android:layout_marginLeft="5dp"
+	        	    android:layout_width="wrap_content"
+	        	    android:layout_height="wrap_content"
+	        	    android:text="1"/>
+        	</LinearLayout>
+    	</RelativeLayout>
+    	
+        <View
+		    android:layout_width="1dp"
+		    android:layout_height="match_parent"
+		    android:layout_marginTop="10dp"
+		    android:layout_marginBottom="10dp"
+		    android:background="@color/gray" />
+        
+    	<RelativeLayout
+           	android:id="@+id/c_ll"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+        	<LinearLayout 
+        	    android:layout_width="wrap_content"
+        	    android:layout_height="wrap_content"
+        	    android:layout_centerInParent="true">
+	        	<ImageView 
+	        	    android:layout_width="wrap_content"
+	        	    android:layout_height="wrap_content"
+	        	    android:layout_centerInParent="true"
+	        	    android:src="@drawable/icon_comment"/>
+	        	
+	        	</LinearLayout>
+    	</RelativeLayout>
+    	
+    	<View
+		    android:layout_width="1dp"
+		    android:layout_height="match_parent"
+		    android:layout_marginTop="10dp"
+		    android:layout_marginBottom="10dp"
+		    android:background="@color/gray" />
+    	<RelativeLayout
+           	android:id="@+id/l_ll"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+        	<LinearLayout 
+        	    android:layout_width="wrap_content"
+        	    android:layout_height="wrap_content"
+        	    android:layout_centerInParent="true">
+	        	<ImageView 
+	        	    android:layout_width="wrap_content"
+	        	    android:layout_height="wrap_content"
+	        	    android:layout_centerInParent="true"
+	        	    android:src="@drawable/icon_like"/>
+	        	<TextView
+	        	    android:id="@+id/rb_like"
+	        	    android:layout_width="wrap_content"
+	        	    android:layout_height="wrap_content"
+	        	    android:layout_marginLeft="5dp"
+	        	    android:layout_alignParentRight="true"
+	        	    android:text="1"/>
+        	</LinearLayout>
+    	</RelativeLayout>
+        	
+        
+    </LinearLayout>
+        
+    
+	
+       
+   
+</LinearLayout>

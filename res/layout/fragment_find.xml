@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 修改 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/gray_bg">
+    <!-- 导入标题栏 -->
+    <include layout="@layout/include_titlebar"/>
+    
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout 
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+	    
+			<!-- 内容 -->
+		    <LinearLayout 
+		        android:layout_width="match_parent"
+		        android:layout_margin="10dp"
+		    	android:layout_height="180dp"
+		    	android:background="@drawable/activity_block"
+		    	android:orientation="vertical"> 	
+		    	
+			    	<TextView 
+			    	    android:id="@+id/activity_Tv"
+			    	    android:layout_width="match_parent"
+			    	    android:layout_height="wrap_content"
+			    	    android:layout_marginLeft="8dp"
+			    	    android:layout_marginTop="5dp"
+			    	    android:text="校园活动"
+			    	    android:textColor="@color/black"
+			    	    android:textSize="18sp"/>
+			   		
+			    	<ImageView
+			    	    android:id="@+id/activity_Iv"
+			    	    android:layout_width="match_parent"
+			    	    android:layout_height="140dp"
+			    	    android:layout_below="@id/activity_Tv"
+			    	    android:layout_margin="5dp"
+			    	    android:scaleType="fitXY"
+			    	    android:src="@drawable/activity"/>
+		     	
+		    </LinearLayout>
+		    
+		    
+			<LinearLayout 
+			    android:id="@+id/jjjj"
+		        android:layout_width="match_parent"
+		        android:layout_margin="10dp"
+		    	android:layout_height="140dp"
+		    	android:background="@drawable/activity_block">
+			    	<TextView
+			    	    android:layout_width="match_parent"
+			    	    android:layout_height="wrap_content"
+			    	    android:gravity="center"
+			    	    android:layout_gravity="center"
+			    	    android:text="敬请期待"
+			    	    android:textColor="@color/black"
+			    	    android:textSize="26sp"/>
+		     </LinearLayout>
+	     </LinearLayout>
+     </ScrollView>
+    
+</LinearLayout>
