@@ -12,3 +12,7 @@
 ![image{200*300}](https://github.com/ydc201211/VirtualCampus/blob/master/picture/图片4.png)
 
 ![image{200*300}](https://github.com/ydc201211/VirtualCampus/blob/master/picture/图片5.png)
+
+![image{200*300}](https://github.com/ydc201211/VirtualCampus/blob/master/picture/图片6.png)
+
+![image{200*300}](https://github.com/ydc201211/VirtualCampus/blob/master/picture/图片7.png)
