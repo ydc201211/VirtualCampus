@@ -16,9 +16,11 @@ import org.json.JSONObject;
 import util.TitleBuilder;
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.DialogInterface.OnCancelListener;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
@@ -43,6 +45,7 @@ import common.Constants;
 import common.LocalStorage;
 
 import com.vc.api.OkHttpConnection;
+import com.vc.dialog.DialogUtil;
 
 public class Activity_Post extends Activity implements OnClickListener {
 
@@ -55,7 +58,10 @@ public class Activity_Post extends Activity implements OnClickListener {
 	private EditText detail_et;
 	private RelativeLayout post_select_pic_rl;
 	private ImageView post_show_pic_iv;
-
+	
+	private TitleBuilder titleBuilder;
+	
+	
 	// 图片选取
 	private static final String IMAGE_UNSPECIFIED = "image/jpg";
 	private static final int CROP_REQUEST_CODE = 4;
@@ -86,7 +92,9 @@ public class Activity_Post extends Activity implements OnClickListener {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_activity__post);
-
+		
+		
+		
 		userId = LocalStorage.getString(Activity_Post.this, "userId");
 		initView();
 		initTitle();
@@ -107,8 +115,8 @@ public class Activity_Post extends Activity implements OnClickListener {
 	}
 
 	private void initTitle() {
-
-		new TitleBuilder(this).setTitleText("活动发布").setLeftText("取消")
+		titleBuilder = new TitleBuilder(this);
+		titleBuilder.setTitleText("活动发布").setLeftText("取消")
 				.setLeftOnClickListener(this).setRightText("发布")
 				.setRightOnClickListener(this);
 
@@ -242,11 +250,12 @@ public class Activity_Post extends Activity implements OnClickListener {
 			finish();
 			break;
 		case R.id.titlebar_tv_right:
-
+			titleBuilder.setRight_TvEnable(false);
 			getEditData();
 			saveActivity();
 			if (imgName != null && imgByte != null)
 				uploadPic();
+			
 			break;
 		case R.id.post_select_pic_rl:
 			Log.i(TAG, "click");
@@ -256,7 +265,7 @@ public class Activity_Post extends Activity implements OnClickListener {
 		}
 	}
 
-	// 锟斤拷锟斤拷图片
+	//编辑图片
 
 	private void getEditData() {
 		
@@ -303,11 +312,11 @@ public class Activity_Post extends Activity implements OnClickListener {
 
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
-		if (resultCode == RESULT_OK) { // 锟斤拷锟截成癸拷
+		if (resultCode == RESULT_OK) { 
 			switch (requestCode) {
-			case PHOTO_WITH_CAMERA: {// 锟斤拷锟秸伙拷取图片
+			case PHOTO_WITH_CAMERA: {
 				String status = Environment.getExternalStorageState();
-				if (status.equals(Environment.MEDIA_MOUNTED)) { // 锟角凤拷锟斤拷SD锟斤拷
+				if (status.equals(Environment.MEDIA_MOUNTED)) { 
 
 					startCrop(Uri.fromFile(new File(Environment
 							.getExternalStorageDirectory(), "image.jpg")));
@@ -318,7 +327,7 @@ public class Activity_Post extends Activity implements OnClickListener {
 				}
 				break;
 			}
-			case PHOTO_WITH_DATA: {// 锟斤拷图锟斤拷锟斤拷选锟斤拷图片
+			case PHOTO_WITH_DATA: {
 
 				Uri originalUri = data.getData();
 				startCrop(originalUri);
@@ -328,7 +337,7 @@ public class Activity_Post extends Activity implements OnClickListener {
 			}
 			case CROP_REQUEST_CODE:
 				if (data == null) {
-					// TODO 锟斤拷锟街帮拷院锟斤拷锟斤拷锟斤拷霉锟斤拷锟绞局帮拷锟斤拷玫锟酵计�锟斤拷锟斤拷锟斤拷示默锟较碉拷图片
+					
 					return;
 				}
 				Bundle extras = data.getExtras();
@@ -340,9 +349,9 @@ public class Activity_Post extends Activity implements OnClickListener {
 					Log.i(TAG, imgName);
 					savePicture(imgName, bitmap);
 					ByteArrayOutputStream stream = new ByteArrayOutputStream();
-					bitmap.compress(Bitmap.CompressFormat.JPEG, 75, stream);// (0-100)压锟斤拷锟侥硷拷
-					// 锟剿达拷锟斤拷锟皆帮拷Bitmap锟斤拷锟芥到sd锟斤拷锟叫ｏ拷锟斤拷锟斤拷锟诫看锟斤拷http://www.cnblogs.com/linjiqin/archive/2011/12/28/2304940.html
-					post_show_pic_iv.setImageBitmap(bitmap); // 锟斤拷图片锟斤拷示锟斤拷ImageView锟截硷拷锟斤拷
+					bitmap.compress(Bitmap.CompressFormat.JPEG, 75, stream);
+					
+					post_show_pic_iv.setImageBitmap(bitmap);
 				}
 
 			}
@@ -350,9 +359,9 @@ public class Activity_Post extends Activity implements OnClickListener {
 		super.onActivityResult(requestCode, resultCode, data);
 	}
 
-	// 图片选锟斤拷曰锟斤拷锟�
+	
 	private void openPictureSelectDialog() {
-		// 锟皆讹拷锟斤拷Context,锟斤拷锟斤拷锟斤拷锟�
+		
 		Context dialogContext = new ContextThemeWrapper(Activity_Post.this,
 				android.R.style.Theme_Light);
 		String[] choiceItems = new String[2];
@@ -360,7 +369,7 @@ public class Activity_Post extends Activity implements OnClickListener {
 		choiceItems[1] = "本地相册"; 
 		ListAdapter adapter = new ArrayAdapter<String>(dialogContext,
 				android.R.layout.simple_list_item_1, choiceItems);
-		// 锟皆伙拷锟斤拷锟斤拷锟节刚才讹拷锟斤拷玫锟斤拷锟斤拷锟斤拷锟斤拷锟�
+		
 		AlertDialog.Builder builder = new AlertDialog.Builder(dialogContext);
 		builder.setTitle("添加图片");
 		builder.setSingleChoiceItems(adapter, -1,
@@ -368,10 +377,10 @@ public class Activity_Post extends Activity implements OnClickListener {
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
 						switch (which) {
-						case 0: // 锟斤拷锟�
+						case 0: 
 							doTakePhoto();
 							break;
-						case 1: // 锟斤拷图锟斤拷锟斤拷锟斤拷锟窖∪�
+						case 1: 
 							doPickPhotoFromGallery();
 							break;
 						}
@@ -381,32 +390,32 @@ public class Activity_Post extends Activity implements OnClickListener {
 		builder.create().show();
 	}
 
-	// 锟斤拷锟斤拷
+	
 	private void doTakePhoto() {
-		Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE); // 锟斤拷锟斤拷系统锟斤拷锟�
+		Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE); 
 
-		// 指锟斤拷锟斤拷片锟斤拷锟斤拷路锟斤拷锟斤拷SD锟斤拷锟斤拷锟斤拷image.jpg为一锟斤拷锟斤拷时锟侥硷拷锟斤拷每锟斤拷锟斤拷锟秸猴拷锟斤拷锟酵计拷锟斤拷岜伙拷婊�
+		
 		Uri imageUri = Uri.fromFile(new File(Environment
 				.getExternalStorageDirectory(), "image.jpg"));
-		// 直锟斤拷使锟矫ｏ拷没锟斤拷锟斤拷小
+		
 		intent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
 
-		startActivityForResult(intent, PHOTO_WITH_CAMERA); // 锟矫伙拷锟斤拷锟斤拷舜锟斤拷锟斤拷锟饺�
+		startActivityForResult(intent, PHOTO_WITH_CAMERA); 
 	}
 
-	/** 锟斤拷锟斤拷锟斤拷取图片 **/
+	
 	private void doPickPhotoFromGallery() {
 		Intent intent = new Intent(Intent.ACTION_PICK, null);
 		intent.setDataAndType(MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
 				IMAGE_UNSPECIFIED);
 		
-		 startActivityForResult(intent, PHOTO_WITH_DATA); // 取锟斤拷锟斤拷片锟襟返回碉拷锟斤拷锟斤拷锟斤拷
+		 startActivityForResult(intent, PHOTO_WITH_DATA); 
 	}
 
-	// 锟斤拷锟斤拷锟斤拷片路锟斤拷
+	
 	private String createPhotoFileName() {
 		String fileName = "";
-		Date date = new Date(System.currentTimeMillis()); // 系统锟斤拷前时锟斤拷
+		Date date = new Date(System.currentTimeMillis()); 
 		SimpleDateFormat dateFormat = new SimpleDateFormat(
 				"'IMG'_yyyyMMdd_HHmmss");
 		fileName = dateFormat.format(date) + ".jpg";
@@ -415,26 +424,22 @@ public class Activity_Post extends Activity implements OnClickListener {
 
 	
 
-	/**
-	 * 锟斤拷始锟矫硷拷
-	 * 
-	 * @param uri
-	 */
+	
 	private void startCrop(Uri uri) {
-		Intent intent = new Intent("com.android.camera.action.CROP");// 锟斤拷锟斤拷Android系统锟皆达拷锟揭伙拷锟酵计拷锟斤拷锟揭筹拷锟�
+		Intent intent = new Intent("com.android.camera.action.CROP");
 		intent.setDataAndType(uri, IMAGE_UNSPECIFIED);
-		intent.putExtra("crop", "true");// 锟斤拷锟斤拷锟睫硷拷
-		// aspectX aspectY 锟角匡拷叩谋锟斤拷锟�
+		intent.putExtra("crop", "true");
+		
 		intent.putExtra("aspectX", 1);
 		intent.putExtra("aspectY", 1);
-		// outputX outputY 锟角裁硷拷图片锟斤拷锟�
+		
 		intent.putExtra("outputX", 400);
 		intent.putExtra("outputY", 600);
 		intent.putExtra("return-data", true);
 		startActivityForResult(intent, CROP_REQUEST_CODE);
 	}
 
-	/** 锟斤拷锟斤拷图片锟斤拷锟斤拷应锟斤拷锟斤拷 **/
+	
 	private void savePicture(String fileName, Bitmap bitmap) {
 
 		FileOutputStream fos = null;
@@ -457,14 +462,14 @@ public class Activity_Post extends Activity implements OnClickListener {
 		}
 	}
 
-	/* 锟斤拷bitmap转锟斤拷为锟街凤拷锟斤拷锟斤拷 */
+	
 	public byte[] getBitmapByte(Bitmap bitmap) {
 		ByteArrayOutputStream out = new ByteArrayOutputStream();
 		bitmap.compress(Bitmap.CompressFormat.JPEG, 100, out);
 		return out.toByteArray();
 	}
 
-	// 锟斤拷锟街斤拷锟斤拷锟斤拷转锟斤拷为bitmap
+	
 	public Bitmap getBitmapFromByte(byte[] temp) {
 		if (temp != null) {
 			Bitmap bitmap = BitmapFactory.decodeByteArray(temp, 0, temp.length);

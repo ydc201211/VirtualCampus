@@ -27,4 +27,6 @@ public class ApiUrl {
 	public static final String URL_CHANGEPSW = URL_HOST + "user/changePassword";
 
 	public static final String URL_CHANGEImage = URL_HOST + "user/editPicInfo";
+	
+	public static final String URL_GET_TOKEN = URL_HOST + "user/getToken";
 }

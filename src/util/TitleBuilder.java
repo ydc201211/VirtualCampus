@@ -19,6 +19,7 @@ public class TitleBuilder {
 	private TextView tvLeft;
 	private TextView tvRight;
 	private EditText etTitle;
+	
 
 	public TitleBuilder(Activity context) {
 		viewTitle = context.findViewById(R.id.rl_titlebar);
@@ -114,6 +115,12 @@ public class TitleBuilder {
 
 	public View build() {
 		return viewTitle;
+	}
+	
+	public void setRight_TvEnable(boolean isClick){
+		if(!isClick){
+			tvRight.setClickable(false);
+		}
 	}
 
 }

@@ -397,10 +397,11 @@ public class Activity_ActivityList extends Activity implements OnClickListener {
 		case 1:
 			if (intent != null) {
 				if (resultCode == -1) {
-					Log.i("ydc", "����fragment");
+					pageNow = 1;
+					initData();
+					
 				} else {
-					String a = intent.getStringExtra("back");
-					Log.i("fragment_person", a);
+					
 				}
 			}
 			break;

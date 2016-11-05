@@ -9,13 +9,13 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import com.vc.app.App;
 import com.vc.entity.User;
-import common.MyApplication;
 
 public class Activity_Setting extends Activity implements OnClickListener {
 	private Button btn_quit;
 	private ImageView iv_set_left;
-	MyApplication application;
+	App application;
 	private LinearLayout changePsw;
 	User user = new User();
 
@@ -25,7 +25,7 @@ public class Activity_Setting extends Activity implements OnClickListener {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.settingactivity);
 		initview();
-		application = (MyApplication) getApplication();
+		application = (App) getApplication();
 	}
 
 	private void initview() {

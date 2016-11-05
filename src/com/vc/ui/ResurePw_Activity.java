@@ -32,7 +32,7 @@ public class ResurePw_Activity extends Activity implements OnClickListener {
 				mDialog.dismiss();
 			switch (msg.what) {
 			case ResultMessage.CHANGE_PWD_FAILED: {
-				Toast.makeText(ResurePw_Activity.this, "找回密码失败！", 0).show();
+				Toast.makeText(ResurePw_Activity.this, "找回密码成功，请登录！", 0).show();
 				Intent intent = new Intent(ResurePw_Activity.this,
 						LoginActivity.class);
 				intent.putExtra("loginId", 3);
@@ -40,8 +40,8 @@ public class ResurePw_Activity extends Activity implements OnClickListener {
 				break;
 			}
 			case ResultMessage.CHANGE_PWD_SUCCESS: {
-				Toast.makeText(ResurePw_Activity.this, "找回密码成功，请返回登录！", 0)
-						.show();
+//				Toast.makeText(ResurePw_Activity.this, "鎵惧洖瀵嗙爜鎴愬姛锛岃杩斿洖鐧诲綍锛�", 0)
+//						.show();
 				Intent intent = new Intent(ResurePw_Activity.this,
 						LoginActivity.class);
 				intent.putExtra("loginId", 3);
@@ -49,10 +49,10 @@ public class ResurePw_Activity extends Activity implements OnClickListener {
 				break;
 			}
 			case ResultMessage.FAILED:
-				Toast.makeText(ResurePw_Activity.this, "操作失败", 0).show();
+				Toast.makeText(ResurePw_Activity.this, "操作失败!", 0).show();
 				break;
 			case ResultMessage.TIMEOUT:
-				Toast.makeText(ResurePw_Activity.this, "连接超时！",
+				Toast.makeText(ResurePw_Activity.this, "连接超时!",
 						Toast.LENGTH_SHORT).show();
 				break;
 			}
@@ -61,7 +61,7 @@ public class ResurePw_Activity extends Activity implements OnClickListener {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		// TODO �Զ���ɵķ������
+		// TODO 锟皆讹拷锟斤拷傻姆锟斤拷锟斤拷锟斤拷
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.resurepw_activity);
 		Intent intent = this.getIntent();
@@ -73,7 +73,7 @@ public class ResurePw_Activity extends Activity implements OnClickListener {
 		edit_resure_ps2 = (EditText) findViewById(R.id.edit_resure_ps2);
 		btnleft.setOnClickListener(this);
 		btn_next.setOnClickListener(this);
-		mDialog = DialogUtil.getLoadDialog(this, "请稍后！");
+		mDialog = DialogUtil.getLoadDialog(this, "请稍后...");
 		mDialog.setCancelable(true);
 		mDialog.setCanceledOnTouchOutside(false);
 		mDialog.setOnCancelListener(new OnCancelListener() {
@@ -101,7 +101,7 @@ public class ResurePw_Activity extends Activity implements OnClickListener {
 					mDialog.show();
 				}
 			} else
-				Toast.makeText(this, "两次密码不一致，请重新输入！", 0).show();
+				Toast.makeText(this, "两次密码不一致！", 0).show();
 			break;
 		}
 		}

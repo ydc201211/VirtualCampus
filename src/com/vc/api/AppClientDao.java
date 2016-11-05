@@ -886,5 +886,55 @@ public class AppClientDao {
 					}
 				});
 	}
+	
+	public void getToken(final Handler mHandler, String userId){
+		RequestParams params = new RequestParams();
+		params.put("userId", userId);
+
+		mClient.post(ApiUrl.URL_GET_TOKEN, params,
+				new AsyncHttpResponseHandler() {
+					@Override
+					public void onSuccess(int statusCode, Header[] headers,
+							byte[] responseBody) {
+						// 锟斤拷取锟斤拷锟截碉拷锟街凤拷
+						String result = new String(responseBody);
+						
+						try {
+							JSONObject json = new JSONObject(result);
+							int resultCode = json.getInt("resultCode");
+							String resultInfo = json.getString("resultInfo");
+							Log.i("net", result);
+							if (resultCode == 111)
+								mHandler.obtainMessage(
+										ResultMessage.GET_TOKEN_SUCCESS,
+										result).sendToTarget();
+							else
+								mHandler.obtainMessage(
+										ResultMessage.GET_TOKEN_FAIL,
+										resultInfo).sendToTarget();
+						} catch (JSONException e) {
+							e.printStackTrace();
+						}
+
+					}
+
+					@Override
+					public void onFailure(int statusCode, Header[] headers,
+							byte[] responseBody, Throwable error) {
+						if (error != null) {
+							if (true)
+								System.out.println("error.getMessage-->>"
+										+ error.toString());
+						}
+						if (error instanceof ConnectTimeoutException) {
+							mHandler.obtainMessage(ResultMessage.TIMEOUT,
+									"连接超时").sendToTarget();
+							return;
+						}
+						mHandler.obtainMessage(ResultMessage.FAILED, "连接失败")
+								.sendToTarget();
+					}
+				});
+	}
 
 }

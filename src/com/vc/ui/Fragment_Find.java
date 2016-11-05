@@ -108,12 +108,12 @@ public class Fragment_Find extends Fragment implements OnClickListener {
 		Bundle bundle;
 		switch (v.getId()) {
 		case R.id.activity_Iv:
-			intent = new Intent();
+			
 			intent = new Intent(getActivity(), Activity_ActivityList.class);
 			startActivity(intent);
 			break;
 		case R.id.jjjj:
-			intent = new Intent();
+			
 			intent = new Intent(getActivity(), Activity_PointSearch.class);
 			startActivityForResult(intent, 1);
 		default:

@@ -55,13 +55,13 @@ import com.vc.api.ResultMessage;
 import com.vc.entity.User;
 import common.Base64;
 import common.Constants;
-import common.MyApplication;
 
 import com.vc.api.OkHttpConnection;
+import com.vc.app.App;
 
 public class Activity_Person_Detail extends Activity implements OnClickListener {
 
-	private MyApplication application;
+	private App application;
 	
 	//头像ImageView
 	private ImageView avatar_iv;
@@ -198,7 +198,7 @@ public class Activity_Person_Detail extends Activity implements OnClickListener 
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_activity__person__detail);
 
-		application = (MyApplication) this.getApplication();
+		application = (App) this.getApplication();
 
 		user = application.getUser();
 		userId = user.getUserId();

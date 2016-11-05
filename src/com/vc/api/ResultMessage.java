@@ -44,4 +44,7 @@ public class ResultMessage {
 
 	public static final int GET_MARKS_PROMPT_SUCCESS = 400;
 	public static final int GET_MARKS_PROMPT_FAIL = 401;
+	
+	public static final int GET_TOKEN_SUCCESS = 500;
+	public static final int GET_TOKEN_FAIL = 501;
 }

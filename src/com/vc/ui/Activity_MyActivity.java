@@ -35,9 +35,10 @@ import com.vc.adapter.ActivityAdapter;
 import com.vc.dialog.DialogUtil_1;
 
 import common.LocalStorage;
-import common.MyApplication;
 
 import com.vc.api.OkHttpConnection;
+import com.vc.app.App;
+
 import dto.ActionSimple;
 
 public class Activity_MyActivity extends Activity implements OnClickListener {
@@ -55,7 +56,7 @@ public class Activity_MyActivity extends Activity implements OnClickListener {
 	private int pageNow = 1; // 锟斤拷前页
 	private int pageCount = 0; // 页锟斤拷
 	private String resultCode;
-	MyApplication application;
+	App application;
 
 	public static final int LOADING_COMPLETE = 1;
 	public static final int LOAD_FAIL = 0;
@@ -74,7 +75,7 @@ public class Activity_MyActivity extends Activity implements OnClickListener {
 		setContentView(R.layout.activity_myactivity);
 
 		userId = LocalStorage.getString(Activity_MyActivity.this, "userId");
-		application = (MyApplication) getApplication();
+		application = (App) getApplication();
 		if (application.getUserId() != 0)
 			user_id = application.getUserId();
 		initView(); // 锟斤拷始锟斤拷锟斤拷锟截帮拷钮

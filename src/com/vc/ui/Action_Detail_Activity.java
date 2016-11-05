@@ -1151,10 +1151,13 @@ public class Action_Detail_Activity extends Activity implements
 		case R.id.sure_comment_highlight_tv:
 			userId = LocalStorage.getString(Action_Detail_Activity.this,
 					"userId");
+			hideSoftInputView();
+			chat_face_container.setVisibility(View.GONE);
 			if (userId == null || userId == "") {
 				Toast.makeText(Action_Detail_Activity.this, "请先登录",
 						Toast.LENGTH_SHORT).show();
 			} else {
+				
 				params = new ArrayList<NameValuePair>();
 				String commentContent = write_comment_et.getText().toString();
 
@@ -1171,7 +1174,10 @@ public class Action_Detail_Activity extends Activity implements
 				write_comment_et.setText("");
 				sure_comment_normal_tv.setVisibility(View.VISIBLE);
 				sure_comment_lighlight_tv.setVisibility(View.GONE);
+				
 				getDataFromServer(ADDCOMMENT_SUCCESS, ADDCOMMENT_FAIL);
+				/*pageNow = 1;
+				getData(0);*/
 			}
 			break;
 			

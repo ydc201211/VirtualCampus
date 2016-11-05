@@ -32,14 +32,15 @@ import com.nostra13.universalimageloader.core.assist.ImageScaleType;
 import com.vc.api.AppClientDao;
 import com.vc.api.OkHttpConnection;
 import com.vc.api.ResultMessage;
+import com.vc.app.App;
 import com.vc.entity.User;
 import common.Constants;
 import common.LocalStorage;
-import common.MyApplication;
+
 
 public class Fragment_Person extends Fragment implements OnClickListener {
 
-	private MyApplication application;
+	private App application;
 
 	private ImageView avatarIv;
 	private TextView loginTv;
@@ -120,7 +121,7 @@ public class Fragment_Person extends Fragment implements OnClickListener {
 			Bundle savedInstanceState) {
 		personView = inflater.inflate(R.layout.fragment_person, null);
 		/* Bundle data = getArguments(); */
-		application = (MyApplication) getActivity().getApplication();
+		application = (App) getActivity().getApplication();
 		// 图片锟斤拷锟斤拷
 		imageLoader = ImageLoader.getInstance();
 		imageLoader.init(ImageLoaderConfiguration.createDefault(getActivity()));

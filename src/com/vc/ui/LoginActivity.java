@@ -18,9 +18,9 @@ import android.widget.Toast;
 
 import com.vc.api.AppClientDao;
 import com.vc.api.ResultMessage;
+import com.vc.app.App;
 import com.vc.dialog.DialogUtil;
 import common.LocalStorage;
-import common.MyApplication;
 
 public class LoginActivity extends Activity implements OnClickListener {
 	private ImageButton btnleft;
@@ -32,7 +32,7 @@ public class LoginActivity extends Activity implements OnClickListener {
 	String username, password;
 	private int userId = 0;
 	private int loginId = 0;
-	private MyApplication application;
+	private App application;
 	AppClientDao mAppClientDao = new AppClientDao(this);
 	private Handler mHandler = new Handler() {
 		public void handleMessage(android.os.Message msg) {
@@ -65,7 +65,7 @@ public class LoginActivity extends Activity implements OnClickListener {
 		// TODO 锟皆讹拷锟斤拷傻姆锟斤拷锟斤拷锟斤拷
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.loginactivity);
-		application = (MyApplication) getApplication();
+		application = (App) getApplication();
 		Intent intent = this.getIntent();
 		loginId = intent.getIntExtra("loginId", -1);
 		initview();

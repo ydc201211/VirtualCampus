@@ -16,8 +16,9 @@ import android.widget.Toast;
 
 import com.vc.api.AppClientDao;
 import com.vc.api.ResultMessage;
+import com.vc.app.App;
 import com.vc.dialog.DialogUtil;
-import common.MyApplication;
+
 
 public class Activity_ChangePsw extends Activity implements OnClickListener {
 	private ImageButton btnleft;
@@ -25,7 +26,7 @@ public class Activity_ChangePsw extends Activity implements OnClickListener {
 	private EditText edit_phoneNo, edit_ICode;
 	private Button sendnews;
 	private Dialog mDialog;
-	private MyApplication application;
+	private App application;
 	int code = 0;
 	String phoneNo = "";
 	AppClientDao mAppClientDao = new AppClientDao(Activity_ChangePsw.this);
@@ -61,7 +62,7 @@ public class Activity_ChangePsw extends Activity implements OnClickListener {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.registeractivity);
-		application = (MyApplication) getApplication();
+		application = (App) getApplication();
 		initview();
 	}
 
