@@ -4,6 +4,7 @@
 
 
 ![image{200*300}](https://github.com/ydc201211/VirtualCampus/blob/master/picture/图片1.png)
+<img src="https://github.com/ydc201211/VirtualCampus/blob/master/picture/图片1.png" width=256 height=256 />
 
 ![image{200*300}](https://github.com/ydc201211/VirtualCampus/blob/master/picture/图片2.png)
 
